@@ -21,7 +21,7 @@ int main()
 
     for (i; i < 50; i++)
     {
-        printf("random number %d = %u\n", i, randomNumber(5, 8));
+        printf("random number %d = %u\n", i, randomNumber(1, 2));
     }
 
     return 0;
@@ -71,9 +71,8 @@ unsigned int randomNumber(unsigned int lower, unsigned int higher)
     ********************************************************************************
 
     ********************************************************************************
-    *The stepts below is inaccurate
-    ********************************************************************************/
-
+    * The stepts below is inaccurate
+    
     unsigned int rand_num, rand_val, average;
 
     rand_val = (rand() % higher) + 1;
@@ -96,4 +95,23 @@ unsigned int randomNumber(unsigned int lower, unsigned int higher)
     }
 
     return rand_num;
+    *******************************************************************************
+    
+
+    *********************************************************************************
+    * What if we make up a condition as in, the random number should be greater than
+    * than or equal to lower
+    * while ((r + 1) >= lower) {do-something}
+    * and this actually did it
+    ********************************************************************************/
+    unsigned int rand_val;
+
+    rand_val = (rand() % higher) + 1;
+
+    while (rand_val < lower || rand_val > higher)
+    {
+        rand_val = (rand() % higher) + 1;
+    }
+    
+    return rand_val;
 }
