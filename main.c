@@ -1,92 +1,81 @@
 #include <stdio.h>
 
+int square(int x);
+void say_hello();
+int factorial(int i);
+
 int main(void)
 {
-    // Conditionals are used to perform different computations
-    // or actions depending on whether a condition evaluates to
-    //  true or false.
+    // Functions are central to C programming and are used
+    // to accomplish a program solution as a series of subtasks.
 
-    // The expression evaluates to either true or false, and
-    // statements can be a single statement or a code block
-    // enclosed by curly braces { }.
+    // A function:
+    // is a block of code that performs a specific task
+    // is reusable
+    // makes a program easier to test
+    // can be modified without changing the calling program
 
-    // int score = 89;
+    // int x;
 
-    // if (score > 75)
+    // printf("Enter a number: ");
+    // scanf("%d", &x);
+
+    // printf("The square of %d is %d\n", x, square(x));
+
+    // A function's parameters are used to receive values required by the function.
+
+    // Values are passed to these parameters as arguments through the function call.
+
+    // By default, arguments are passed by value, which means that a copy of data
+    // is given to the parameters of the called function. The actual variable isn't
+    // passed into the function, so it won't change.
+    // Variable scope refers to the visibility of variables within a program.
+    // Variables declared in a function are local to that block of code and cannot
+    //  be referred to outside the function.
+    // Variables declared outside all functions are global to the entire program.
+
+    // Static variables have a local scope but are not destroyed when a function is exited.
+    // Therefore, a static variable retains its value for the life of the program and can be
+    // accessed every time the function is re-entered.
+    // A static variable is initialized when declared and requires the prefix static
+    // int i;
+
+    // for (i = 0; i < 5; i++)
     // {
-    //     printf("You passed.\n");
-    // }
-    // else
-    // {
-    //     printf("You did not passed.\n");
-    // }
-
-    // There are six relational operators that can be used to
-    // form a Boolean expression, which returns true or false:
-    // < less than
-    // <= less than or equal to
-    // > greater than
-    // >= greater than or equal to
-    // == equal to
-    // != not equal to
-
-    // int num = 41;
-    // num += 1;
-    // if (num == 42)
-    // {
-    //     printf("You won!");
-    // }
-
-    // Another way to form an if-else statement is by using the
-    // ?: operator in a conditional expression. The ?: operator
-    //  can have only one statement associated with the if and the else.
-    // int y;
-    // int x = 3;
-
-    // y = (x >= 5) ? 5 : x;
-
-    // printf("%d\n", y);
-
-    // int num = 3;
-
-    // switch (num)
-    // {
-    // case 1:
-    //     printf("One\n");
-    //     break;
-    // case 2:
-    //     printf("Two\n");
-    //     break;
-    // case 3:
-    //     printf("Three\n");
-    //     break;
-    // default:
-    //     printf("Not 1, 2, or 3.\n");
+    //     say_hello();
     // }
 
-    // Logical Operators
-    // &&, ||, !
+    // A recursive function is one that calls itself and includes a base case,
+    // or exit condition, for ending the recursive calls.
 
-    // int limit = 5;
-    // while (limit > 0)
-    // {
-    //     printf("%d\n", limit);
-    //     limit--;
-    // }
+    int i = 3;
 
-    // do
-    // {
-    //     printf("%d\n", limit);
-    //     limit++;
-    // } while (limit <= 5);
+    printf("%d factorial is %d\n", i, factorial(i));
 
-    // use break to exit a loop
-    // use continue to skip ahead the next iteration
-
-    // for (int i = 0; i < 1000; i += 121)
-    // {
-    //     printf("%d\n", i);
-    // }
-    
     return 0;
+}
+
+void say_hello()
+{
+    static int num_calls = 1;
+
+    printf("Hello number %d\n", num_calls);
+    num_calls++;
+}
+
+int factorial(int i)
+{
+    if (i <= 1)
+    {
+        return 1;
+    }
+    else
+    {
+        return i * factorial(i - 1);
+    }
+}
+
+int square(int x)
+{
+    return x * x;
 }
