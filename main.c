@@ -1,170 +1,92 @@
 #include <stdio.h>
 
-#define PI_ 3.1432
-
 int main(void)
 {
-    // hello world
-    // printf("Hello world\n");
+    // Conditionals are used to perform different computations
+    // or actions depending on whether a condition evaluates to
+    //  true or false.
 
-    // datatypes: int, float, double, char
-    // datatypes vary from one platform to another - sifeof
-    // printf("int - %ld\n", sizeof(int));
-    // printf("float - %ld\n", sizeof(float));
-    // printf("double - %ld\n", sizeof(double));
-    // printf("char - %ld\n", sizeof(char));
+    // The expression evaluates to either true or false, and
+    // statements can be a single statement or a code block
+    // enclosed by curly braces { }.
 
-    // format specifiers
-    // %p, %s
-    // d decimal - (%d, %i)
-    // c character - %c
-    // s string
-    // f float - (%f, %g)
-    // x hexadecimal
+    // int score = 89;
 
-    // variables
-    // int number_of_cows = 120;
-    // float weight_of_avg_cow = 300; // kg
-    // float total_weight_of_cows = weight_of_avg_cow * number_of_cows;
-    // char grade = 'A';
+    // if (score > 75)
+    // {
+    //     printf("You passed.\n");
+    // }
+    // else
+    // {
+    //     printf("You did not passed.\n");
+    // }
 
-    // printf("An average cow weighs, %f and there are %d cows.\n", weight_of_avg_cow, number_of_cows);
+    // There are six relational operators that can be used to
+    // form a Boolean expression, which returns true or false:
+    // < less than
+    // <= less than or equal to
+    // > greater than
+    // >= greater than or equal to
+    // == equal to
+    // != not equal to
 
-    // printf("Therefore there are a total of %f, in weight of cows\n", total_weight_of_cows);
+    // int num = 41;
+    // num += 1;
+    // if (num == 42)
+    // {
+    //     printf("You won!");
+    // }
 
-    // printf("All the cows are grade %c cows\n", grade);
+    // Another way to form an if-else statement is by using the
+    // ?: operator in a conditional expression. The ?: operator
+    //  can have only one statement associated with the if and the else.
+    // int y;
+    // int x = 3;
 
-    // constants using const and #define
-    // use #define
-    // const float PI = 3.1432;
-    // float radius = 5.67;
-    // float area = radius * radius * PI;
+    // y = (x >= 5) ? 5 : x;
 
-    // printf("A circcle of radius, %f, has an area of %f\n", radius, area);
+    // printf("%d\n", y);
 
-    // printf("This is the PI_ = %f\n", PI_);
+    // int num = 3;
 
-    // The difference between const and #define is that const uses
-    // memory for storage and #define does not.
+    // switch (num)
+    // {
+    // case 1:
+    //     printf("One\n");
+    //     break;
+    // case 2:
+    //     printf("Two\n");
+    //     break;
+    // case 3:
+    //     printf("Three\n");
+    //     break;
+    // default:
+    //     printf("Not 1, 2, or 3.\n");
+    // }
 
-    // input and output
-    // getchar() returns the value of the next single character
-    // printf("Whats cow's grade: ");
-    // char cows_grade = getchar();
+    // Logical Operators
+    // &&, ||, !
 
-    // printf("Cow's grade is %c\n", cows_grade);
+    // int limit = 5;
+    // while (limit > 0)
+    // {
+    //     printf("%d\n", limit);
+    //     limit--;
+    // }
 
-    // gets(var) function is used to read input as an ordered sequence of
-    // characters, also called a string which is a collection of character
-    // or a char array.
+    // do
+    // {
+    //     printf("%d\n", limit);
+    //     limit++;
+    // } while (limit <= 5);
 
-    // char cows_fullname[20];
-    // gets(cows_fullname);
+    // use break to exit a loop
+    // use continue to skip ahead the next iteration
 
-    // printf("Cow's fullname is %s. How fortunate of cow\n", cows_fullname);
-
-    // scanf() scans input that matches format specifiers
-    // int number_of_rats;
-
-    // printf("Whats the number of rabbits you have: ");
-    // scanf("%d", &number_of_rats);
-
-    // printf("There are %d rabbits as you claimed\n", number_of_rats);
-
-    // char first_name[15];
-    // char last_name[15];
-
-    // printf("Enter first and last name: ");
-    // The & isn't needed for a string because it acts as a pointer.
-    // scanf("%s %s", first_name, last_name);
-
-    // printf("Your full name is %s %s\n", first_name, last_name);
-
-    // putchar() Outputs a single character.
-    // char char_a = 'a';
-    // putchar(char_a);
-    // printf("\n");
-
-    // The puts() function is used to display output as a string
-    // char some_str[15] = "This is robert";
-    // puts(some_str);
-    // printf("\n");
-
-    // int age;
-    // float weight;
-    // char first_name_[10];
-
-    // printf("Enter your age, weight and fullname please: ");
-    // scanf("%d %f %s", &age, &weight, first_name_);
-
-    // printf("You are %d years old and you weight, %f kg. %s, welcome to our gym.\n", age, weight, first_name_);
-
-    // A format specifier can include several options along with a
-    // conversion character: %[*][max_field]conversion character,
-    // used in scanf
-    // The optional * will skip the input field.
-    // The optional max_width gives the maximum number of characters to
-    // assign to an input field.
-
-    // int x, y;
-    // char text[20];
-
-    // scanf("%2d %d %*f %5s", &x, &y, text);
-    // input: 1234  5.7  elephant
-    // printf("%d  %d  %s", x, y, text);
-    // output: 12  34  eleph
-
-    // Escape sequences begin with a backslash \:
-    // \n new line
-    // \t horizontal tab
-    // \\ backslash
-    // \b backspace
-    // \' single quote
-    // \" double quote
-
-    // %[-][width].[precision]conversion character
-    // used in printf
-    // The optional - specifies left alignment of the data in the string.
-    // The optional width gives the minimum number of characters for the data.
-    // The period . separates the width from the precision.
-    // The optional precision gives the number of decimal
-    // places for numeric data. If s is used as the conversion character,
-    // then precision determines the number of characters to print.
-    // The conversion character converts the argument, if necessary, to the
-    // indicated type:
-    // d decimal
-    // c character
-    // s string
-    // f float
-    // e scientific notation
-    // x hexadecimal
-
-    // printf("Color: %s, Number: %d, float: %5.2f \n", "red", 42, 3.14159);
-    // printf("Pi = %3.2f\n", 3.14159);
-    // printf("Pi = %-8.5f\n", 3.14159);
-    // printf("There are %d %s in the tree.", 22, "apples");
-
-    // To print the % symbol, use %% in the format string.
-
-    // operators
-    // C supports arithmetic operators + (addition), - (subtraction), *
-    // (multiplication), / (division), and % (modulus division).
-
-    // int length = 10;
-    // int width = 5;
-    // int area;
-
-    // area = length * width;
-    // printf("%d \n", area);
-
-    // type casting
-    // float average;
-    // int total = 23;
-    // int count = 4;
-
-    // average = (float)total / count;
-    // printf("%.2f\n", average);
-
-    // we also do  x += 1, x op= val
+    // for (int i = 0; i < 1000; i += 121)
+    // {
+    //     printf("%d\n", i);
+    // }
+    
     return 0;
 }
