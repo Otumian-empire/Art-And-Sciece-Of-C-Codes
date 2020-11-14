@@ -145,5 +145,26 @@ int main(void)
     // printf("There are %d %s in the tree.", 22, "apples");
 
     // To print the % symbol, use %% in the format string.
+
+    // operators
+    // C supports arithmetic operators + (addition), - (subtraction), *
+    // (multiplication), / (division), and % (modulus division).
+
+    // int length = 10;
+    // int width = 5;
+    // int area;
+
+    // area = length * width;
+    // printf("%d \n", area);
+
+    // type casting
+    // float average;
+    // int total = 23;
+    // int count = 4;
+
+    // average = (float)total / count;
+    // printf("%.2f\n", average);
+
+    // we also do  x += 1, x op= val
     return 0;
 }
