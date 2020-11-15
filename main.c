@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-int square(int x);
-void say_hello();
-int factorial(int i);
+// int square(int x);
+// void say_hello();
+// int factorial(int i);
 
 int main(void)
 {
@@ -48,34 +48,62 @@ int main(void)
     // A recursive function is one that calls itself and includes a base case,
     // or exit condition, for ending the recursive calls.
 
-    int i = 3;
+    // int i = 3;
+    // printf("%d factorial is %d\n", i, factorial(i));
 
-    printf("%d factorial is %d\n", i, factorial(i));
+    // arrays
+    // An array is a data structure that stores a collection of related values
+    // that are all the same type.
+
+    char grades[5]; // create an array of 5 grades
+    float scores[5] = {23.6, 67.67, 89.01, 90.34, 56.89};
+
+    printf("The first score is %.2f\n", scores[0]);
+    scores[0] = 32.76;
+    printf("After certain considerations, the first score becomes %.2f\n", scores[0]);
+
+    // looping through the array
+    for (int index = 0; index < 5; index++)
+    {
+        printf("%.2f\n", scores[index]);
+    }
+
+    puts("--------------------------------------\n");
+
+    for (int index = 0; index < 5; index++)
+    {
+        scores[index] -= 34;
+    }
+
+    for (int index = 0; index < 5; index++)
+    {
+        printf("%.2f\n", scores[index]);
+    }
 
     return 0;
 }
 
-void say_hello()
-{
-    static int num_calls = 1;
+// void say_hello()
+// {
+//     static int num_calls = 1;
 
-    printf("Hello number %d\n", num_calls);
-    num_calls++;
-}
+//     printf("Hello number %d\n", num_calls);
+//     num_calls++;
+// }
 
-int factorial(int i)
-{
-    if (i <= 1)
-    {
-        return 1;
-    }
-    else
-    {
-        return i * factorial(i - 1);
-    }
-}
+// int factorial(int i)
+// {
+//     if (i <= 1)
+//     {
+//         return 1;
+//     }
+//     else
+//     {
+//         return i * factorial(i - 1);
+//     }
+// }
 
-int square(int x)
-{
-    return x * x;
-}
+// int square(int x)
+// {
+//     return x * x;
+// }
