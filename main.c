@@ -3,7 +3,9 @@
 // int square(int x);
 // void say_hello();
 // int factorial(int i);
-void swap(int *a, int *b);
+// void swap(int *a, int *b);
+// int sum_arr(int *arr, int size_arr);
+int *get_evens();
 
 int main(void)
 {
@@ -59,7 +61,7 @@ int main(void)
     // char grades[5]; // create an array of 5 grades
     // float scores[5] = {23.6, 67.67, 89.01, 90.34, 56.89};
 
-    // printf("The first score is %.2f\n", scores[0]);
+    // pstaticrintf("The first score is %.2f\n", scores[0]);
     // scores[0] = 32.76;
     // printf("After certain considerations, the first score becomes %.2f\n", scores[0]);
 
@@ -88,12 +90,6 @@ int main(void)
     // the location, or address, of the variable. This is accomplished by using
     // the & symbol.
 
-    // int num;
-    // printf("Enter a number: ");
-
-    // scanf("%d", &num);
-    // printf("%d\n", num);
-
     // &num is the address of the variable num
     // A memory address is given as a hexadecimal number.
 
@@ -104,7 +100,7 @@ int main(void)
     // In other words, it "points" to the location assigned to a variable and
     // can indirectly access the variable.
     // Pointers are declared using the * symbol and take the form:
-    // pointer_type *identifier
+    // pstaticointer_type *identifier
 
     // int num = 3;
     // printf("value of num: %d\n\n", num);
@@ -117,8 +113,7 @@ int main(void)
     // printf("address of ptr: %p\n\n", &ptr);
 
     // Pointers in Expressions
-    // int res;
-
+    // istatic
     // res = (*ptr)++;
     // printf("%d\n", res);
 
@@ -138,7 +133,7 @@ int main(void)
     // ptr = &some_numbers[0];
     // this basically assigns the first element in the array to ptr
     // printf("%d\n", *ptr);
-    // printf("%p\n", some_numbers); // an array is a pointer
+    // pstaticrintf("%p\n", some_numbers); // an array is a pointer
 
     // looping through the array - the ptr using address arithmetic
     // The array is a contiguous memory so the first address + 1 will
@@ -158,13 +153,69 @@ int main(void)
     // To change the actual values of variables, the calling statement
     // passes addresses to pointer parameters in a function.
 
-    int x = 5, y = 9;
-    printf("X = %d, Y = %d\n", x, y);
-    swap(&x, &y);
-    printf("X = %d, Y = %d\n", x, y);
+    // int x = 5, y = 9;
+    // printf("X = %d, Y = %d\n", x, y);
+    // swap(&x, &y);
+    // printf("X = %d, Y = %d\n", x, y);
+
+    // Functions with Array Parameters
+    // An array cannot be passed by value to a function
+    // However, an array name is a pointer, so just passing an array
+    // name to a function is passing a pointer to the array
+
+    // istaticnt arr[5] = {3, 7, 2, 8, -9};
+    // int res_sum_arr = sum_arr(arr, 5);
+
+    // printf("The sum of the elements in the array is: %d\n", res_sum_arr);
+
+    // Functions that Return an Array
+    int *a;
+    int k;
+
+    a = get_evens(); /* get first 5 even numbers */
+    for (k = 0; k < 5; k++)
+    {
+        printf("%d\n", a[k]);
+    }
 
     return 0;
 }
+
+int *get_evens()
+{
+    static int nums[5];
+    int k;
+    int even = 0;
+
+    for (k = 0; k < 5; k++)
+    {
+        nums[k] = even += 2;
+    }
+
+    return (nums);
+}
+
+
+// void swap(int *a, int *b)
+// {
+//     int c;
+
+//     c = *a;
+//     *a = *b;
+//     *b = c;
+// }
+
+// int sum_arr(int *arr, int size_arr)
+// {
+//     int sum_arr_ret = 0;
+
+//     for (int pos = 0; pos < size_arr; pos++)
+//     {
+//         sum_arr_ret += *(arr + pos);
+//     }
+
+//     return sum_arr_ret;
+// }
 
 // void say_hello()
 // {
@@ -190,12 +241,3 @@ int main(void)
 // {
 //     return x * x;
 // }
-
-void swap(int *a, int *b)
-{
-    int c;
-
-    c = *a;
-    *a = *b;
-    *b = c;
-}
