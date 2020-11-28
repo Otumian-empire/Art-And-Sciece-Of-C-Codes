@@ -1,243 +1,111 @@
 #include <stdio.h>
 
-// int square(int x);
-// void say_hello();
-// int factorial(int i);
-// void swap(int *a, int *b);
-// int sum_arr(int *arr, int size_arr);
-int *get_evens();
-
-int main(void)
+int main()
 {
-    // Functions are central to C programming and are used
-    // to accomplish a program solution as a series of subtasks.
+    // strings
 
-    // A function:
-    // is a block of code that performs a specific task
-    // is reusable
-    // makes a program easier to test
-    // can be modified without changing the calling program
+    /* A string in C is an array of characters that ends with
+    a NULL character '\0'. */
+    // char username[11] = "johndoe123";
+    // printf("%s\n", username);
 
-    // int x;
+    /*  this is a string literal
+     When you provide a string literal to initialize the string,
+      the compiler automatically adds a NULL character '\0' to the
+     char array. */
 
-    // printf("Enter a number: ");
-    // scanf("%d", &x);
+    // char username1[11] = {'j', 'o', 'h', 'n', 'd', 'o', 'e', '1', '2', '3', '\0'};
+    // printf("%s\n", username1);
 
-    // printf("The square of %d is %d\n", x, square(x));
+    /* With this approach, the NULL character must be added explicitly.
+    Note that the characters are enclosed in single quotation marks. */
 
-    // A function's parameters are used to receive values required by the function.
+    /* A string pointer declaration such as char *str = "stuff"; is
+    considered a constant and cannot be changed from its initial value. */
 
-    // Values are passed to these parameters as arguments through the function call.
+    // char *username2 = "johndoe123";
+    // printf("%s\n", username2);
 
-    // By default, arguments are passed by value, which means that a copy of data
-    // is given to the parameters of the called function. The actual variable isn't
-    // passed into the function, so it won't change.
-    // Variable scope refers to the visibility of variables within a program.
-    // Variables declared in a function are local to that block of code and cannot
-    //  be referred to outside the function.
-    // Variables declared outside all functions are global to the entire program.
+    /* Standard Library string functions in <string.h>
+    strlen() - get length of a string
+    strcat() - merge two strings
+    strcpy() - copy one string to another
+    strlwr() - convert string to lower case
+    strupr() - convert string to upper case
+    strrev() - reverse string
+    strcmp() - compare two strings */
 
-    // Static variables have a local scope but are not destroyed when a function is exited.
-    // Therefore, a static variable retains its value for the life of the program and can be
-    // accessed every time the function is re-entered.
-    // A static variable is initialized when declared and requires the prefix static
-    // int i;
+    // string input
+    /* To retrieve a line of text or other string from the user, C 
+    provides the scanf(), gets(), and fgets() functions. */
 
-    // for (i = 0; i < 5; i++)
-    // {
-    //     say_hello();
-    // }
+    // char fullname[10];
+    // printf("Enter your fullname: ");
+    // scanf("%s", fullname);
 
-    // A recursive function is one that calls itself and includes a base case,
-    // or exit condition, for ending the recursive calls.
+    // printf("FullName: %s\n", fullname);
 
-    // int i = 3;
-    // printf("%d factorial is %d\n", i, factorial(i));
+    /* When scanf() is used to read a string, there is no need for & to access
+     the variable address because an array name acts as a pointer. */
 
-    // arrays
-    // An array is a data structure that stores a collection of related values
-    // that are all the same type.
+    // char fullname1[10];
+    // printf("Enter your fullname: ");
+    /* gets(fullname1); */
+    /* A better version of gets is fgets */
+    /*     fgets(fullname1, 12, stdin); */
 
-    // char grades[5]; // create an array of 5 grades
-    // float scores[5] = {23.6, 67.67, 89.01, 90.34, 56.89};
+    /* This prevents buffer overflow, which happens when the string array isn't 
+    big enough for the typed text. */
 
-    // pstaticrintf("The first score is %.2f\n", scores[0]);
-    // scores[0] = 32.76;
-    // printf("After certain considerations, the first score becomes %.2f\n", scores[0]);
+    /* printf("FullName: %s\n", fullname1); */
 
-    // looping through the array
-    // for (int index = 0; index < 5; index++)
-    // {
-    //     printf("%.2f\n", scores[index]);
-    // }
+    /* char full_name[50];
+    printf("Enter your full name: ");
+    fgets(full_name, 50, stdin);
+    printf("%s\n", full_name); */
 
-    // puts("--------------------------------------\n");
+    // string output
 
-    // for (int index = 0; index < 5; index++)
-    // {
-    //     scores[index] -= 34;
-    // }
+    /* String output is handled with the fputs(), puts(), and printf() functions. */
+    /* We have seen several use of printf */
 
-    // for (int index = 0; index < 5; index++)
-    // {
-    //     printf("%.2f\n", scores[index]);
-    // }
+    /*  char password[10];
+    char *text = "Enter pwd: ";
+    fputs(text, stdout);
+    fgets(password, 11, stdin); */
+    /* fputs(password, stdout); */
+    /* puts(password); */ /* Adds new line by default */
 
-    // pointers
-    // C is designed to be a low-level language that can easily access memory locations
-    //  and perform memory-related operations.
-    // For instance, the scanf() function places the value entered by the user at
-    // the location, or address, of the variable. This is accomplished by using
-    // the & symbol.
+    //String functions
 
-    // &num is the address of the variable num
-    // A memory address is given as a hexadecimal number.
+    /* The sprintf and sscanf Functions
+    sprintf is like a string builder - you take a couple of vars and create one 
+    sscanf is like a string splitter - you take a whole var and break it into a
+     couple of others  */
 
-    // printing the address of num (%x, %X, %p)
-    // printf("The address of %d is %p and %x\n", num , &num, &num);
+    /* char sentence[100];
+    char firstname[10], lastname[10];
+    int age;
+    float weight;
 
-    // A pointer is a variable that contains the address of another variable.
-    // In other words, it "points" to the location assigned to a variable and
-    // can indirectly access the variable.
-    // Pointers are declared using the * symbol and take the form:
-    // pstaticointer_type *identifier
+    printf("Enter fullname, age and weigh: ");
+    scanf("%s %s %d %f", firstname, lastname, &age, &weight);
 
-    // int num = 3;
-    // printf("value of num: %d\n\n", num);
-    // printf("address of num: %p\n\n", &num);
-    // printf("value at address of num: %d\n\n", *(&num));
+    sprintf(sentence, "My name is %s %s, I am %d years and I weigh, %.2f",
+            firstname, lastname, age, weight);
 
-    // int *ptr = &num;
-    // printf("value of ptr: %p\n\n", ptr);
-    // printf("value at ptr: %d\n\n", *ptr);
-    // printf("address of ptr: %p\n\n", &ptr);
+    puts(sentence); */
 
-    // Pointers in Expressions
-    // istatic
-    // res = (*ptr)++;
-    // printf("%d\n", res);
+    /* Now we can break down a sentence into fragments with sscanf */
 
-    // res = 2 * ++(*ptr);
-    // printf("%d\n", res);
+    char *dist = "john doe 32 34.2";
+    char dfirstname[10], dlastname[10];
+    int dage;
+    float dweight;
 
-    // printf("%d, %d\n", num, (*ptr));
-
-    // Pointers are especially useful with arrays.
-    // An array declaration reserves a block of contiguous
-    // memory addresses for its elements.
-
-    // int some_numbers[5] = {2, 3, 6, 7, 4};
-    // int *ptr = NULL;
-
-    // ptr = some_numbers;
-    // ptr = &some_numbers[0];
-    // this basically assigns the first element in the array to ptr
-    // printf("%d\n", *ptr);
-    // pstaticrintf("%p\n", some_numbers); // an array is a pointer
-
-    // looping through the array - the ptr using address arithmetic
-    // The array is a contiguous memory so the first address + 1 will
-    // lead to the second.. current addr + 1 will lead to the next
-    // remember that we rather increment the address and not value
-    // for (int index = 0; index < 5; index++)
-    // {
-    //     printf("%p + %d = %d\n", ptr, index, *(ptr + index));
-    // }
-
-    // Pointers and Functions
-    // Pointers greatly expand the possibilities for functions.
-    // No longer are we limited to returning one value. With pointer
-    // parameters, your functions can alter actual data rather than a
-    // copy of data.
-
-    // To change the actual values of variables, the calling statement
-    // passes addresses to pointer parameters in a function.
-
-    // int x = 5, y = 9;
-    // printf("X = %d, Y = %d\n", x, y);
-    // swap(&x, &y);
-    // printf("X = %d, Y = %d\n", x, y);
-
-    // Functions with Array Parameters
-    // An array cannot be passed by value to a function
-    // However, an array name is a pointer, so just passing an array
-    // name to a function is passing a pointer to the array
-
-    // istaticnt arr[5] = {3, 7, 2, 8, -9};
-    // int res_sum_arr = sum_arr(arr, 5);
-
-    // printf("The sum of the elements in the array is: %d\n", res_sum_arr);
-
-    // Functions that Return an Array
-    int *a;
-    int k;
-
-    a = get_evens(); /* get first 5 even numbers */
-    for (k = 0; k < 5; k++)
-    {
-        printf("%d\n", a[k]);
-    }
+    sscanf(dist, "%s %s %d %f", dfirstname, dlastname, &dage, &dweight);
+    printf("Firstname: %s\nLastname: %s\nAge: %d\nWeight: %.2f\n",
+           dfirstname, dlastname, dage, dweight);
 
     return 0;
 }
-
-int *get_evens()
-{
-    static int nums[5];
-    int k;
-    int even = 0;
-
-    for (k = 0; k < 5; k++)
-    {
-        nums[k] = even += 2;
-    }
-
-    return (nums);
-}
-
-
-// void swap(int *a, int *b)
-// {
-//     int c;
-
-//     c = *a;
-//     *a = *b;
-//     *b = c;
-// }
-
-// int sum_arr(int *arr, int size_arr)
-// {
-//     int sum_arr_ret = 0;
-
-//     for (int pos = 0; pos < size_arr; pos++)
-//     {
-//         sum_arr_ret += *(arr + pos);
-//     }
-
-//     return sum_arr_ret;
-// }
-
-// void say_hello()
-// {
-//     static int num_calls = 1;
-
-//     printf("Hello number %d\n", num_calls);
-//     num_calls++;
-// }
-
-// int factorial(int i)
-// {
-//     if (i <= 1)
-//     {
-//         return 1;
-//     }
-//     else
-//     {
-//         return i * factorial(i - 1);
-//     }
-// }
-
-// int square(int x)
-// {
-//     return x * x;
-// }
