@@ -1,6 +1,6 @@
 files = main.c
 bin = app
-cc = gcc -Wall
+cc = gcc -Wall -Werror
 
 all: compile run
 

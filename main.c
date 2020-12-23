@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main()
 {
@@ -43,25 +44,121 @@ int main()
     free(ptr) Releases the block of memory pointed to by ptr.  */
 
     // malloc -> returns a void pointer so need to cast to the required type
-    int *ptr;
+    // int *ptr;
 
-    ptr = malloc(sizeof(*ptr) * 10);
+    // ptr = malloc(sizeof(*ptr) * 10);
 
-    if (ptr != NULL)
+    // if (ptr != NULL)
+    // {
+    //     for (int i = 0; i < 10; i++)
+    //     {
+    //         ptr[i] = i * 2;
+    //     }
+    // }
+
+    // for (int i = 0; i < 10; i++)
+    // {
+    //     printf("%d\n", ptr[i]);
+    // }
+
+    // // free((void *)ptr);
+    // free(ptr);
+
+    // calloc -> allocates memory based on the size of a specific item, such as a structure
+
+    // typedef struct
+    // {
+    //     char *msg;
+    //     int id;
+    // } human;
+
+    // human *some_humans;
+    // int num_human = 3;
+
+    // char str[] = "This generation is full of high-level developers";
+
+    // some_humans = calloc(num_human, sizeof(human));
+
+    // if (some_humans != NULL)
+    // {
+    //     for (int k = 0; k < num_human; k++)
+    //     {
+    //         (some_humans + k)->id = k;
+    //         (some_humans + k)->msg = malloc(sizeof(str));
+
+    //         strcpy((some_humans + k)->msg, str);
+    //     }
+    // }
+
+    // for (int k = 0; k < num_human; k++)
+    // {
+    //     printf("ID: %d, %s\n", (some_humans + k)->id, (some_humans + k)->msg);
+    // }
+
+    // realloc() function expands a current block to include additional memory.
+    // int *ptr;
+
+    // /* a block of 10 ints */
+    // ptr = malloc(5 * sizeof(*ptr));
+
+    // /* assign 50 to first int if pointer in not null */
+    // if (ptr != NULL)
+    // {
+    //     *(ptr) = 50;
+    // }
+
+    // ptr = realloc(ptr, 6 * sizeof(*ptr)); /* 6 ints */
+
+    // *(ptr + 5) = 75;
+    // printf("%d %d", *(ptr), *(ptr + 5));
+
+    // Allocating memory for strings
+    // better use strlen for the size of byte instead of sizeof
+    // char stra[10];
+    // char *strb = NULL;
+
+    // strcpy(stra, "Daniel An");
+    // strb = malloc(strlen(stra + 1));
+
+    // strcpy(strb, stra);
+    // printf("strb - %s\n", strb);
+    // printf("stra - %s\n", stra);
+
+    // Many algorithms implement a dynamic array because this allows
+    // the number of elements to grow as needed.
+
+    typedef struct
     {
-        for (int i = 0; i < 10; i++)
-        {
-            ptr[i] = i * 2;
-        }
-    }
+        int *elements;
+        int size;
+        int cap;
+    } dyn_array;
 
-    for (int i = 0; i < 10; i++)
+    dyn_array arr;
+    int i;
+
+    /* initialize array */
+    arr.size = 0;
+    arr.elements = calloc(1, sizeof(*arr.elements));
+    arr.cap = 1; /* room for 1 element */
+
+    /* expand by 5 more elements */
+    arr.elements = realloc(arr.elements, (5 + arr.cap) * sizeof(*arr.elements));
+    if (arr.elements != NULL)
+        arr.cap += 5; /* increase capacity */
+
+    /* add an element and increase size */
+    if (arr.size < arr.cap)
     {
-        printf("%d\n", ptr[i]);
+        arr.elements[arr.size] = 50; /* add element to array */
+        arr.size++;
     }
+    else
+        printf("Need to expand array.");
 
-    // free((void *)ptr);
-    free(ptr);
+    /* display array elements */
+    for (i = 0; i < arr.cap; i++)
+        printf("Element %d: %d\n", i, arr.elements[i]);
 
     return 0;
 }
