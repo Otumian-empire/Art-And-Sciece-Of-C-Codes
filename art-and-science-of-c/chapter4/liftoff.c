@@ -8,15 +8,17 @@ change liftofftimer to suit your specifications
 
 #define liftofftimer 100
 
-int main() {
-	
+int main()
+{
 	printf("lift off in: \n");
-	
-	for (int t = liftofftimer; t > 0; t--) {
+
+	for (int t = liftofftimer; t > 0; t--)
+	{
 		printf("%4d\n", t);
 	}
-	
+
 	printf("lift off!!! God speed.");
+	printf("\n");
 	
 	return 0;
 }

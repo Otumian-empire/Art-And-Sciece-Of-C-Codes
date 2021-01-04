@@ -6,14 +6,14 @@ rewriting the evenodd.c using ?:
 
 #include <stdio.h>
 
-int main() {
-	
+int main()
+{
 	int val;
-	
+
 	printf("enter val: ");
 	scanf("%d", &val);
-	
-	printf("%d is %s\n", val, (val % 2 == 0)? "even" : "odd");
-	
+
+	printf("%d is %s\n", val, (val % 2 == 0) ? "even" : "odd");
+
 	return 0;
 }

@@ -1,6 +1,7 @@
 ﻿/*
 sixesorsevens.c
-a  program  that  displays  the  integers  between  X and  Y  that  are  divisible  by either  6 or  7.
+a  program  that  displays  the  integers  between  X and  Y  
+that  are  divisible  by either  6 or  7.
 */
 
 #include <stdio.h>
@@ -17,7 +18,7 @@ int main()
 		}
 	}
 	
-	printf("\n\n");
+	printf("\n");
 	
 	return 0;
 }

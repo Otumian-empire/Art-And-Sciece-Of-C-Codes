@@ -6,18 +6,17 @@ input: 2, 3
 output: 8
 */
 
-
 // expo declaration
 float expo(int n, int k);
 
 // main
-int main() {
-	
+int main()
+{
 	int n = 2;
 	int k = -20;
-	
+
 	printf("%d raised to the power %d is %f\n", n, k, expo(n, k));
-	
+
 	return 0;
 }
 
@@ -25,23 +24,28 @@ int main() {
 a function that takes two arguments, n and k, 
 where n is the number and k is the power to be raised to.
 */
-float expo(int n, int k) {
-	
+float expo(int n, int k)
+{
+
 	int pow = 1;
 	int temp = k;
-	
-	if (temp < 0) {
+
+	if (temp < 0)
+	{
 		temp *= -1;
 	}
-	
-	for (int i = 0; i < temp; i++) {
+
+	for (int i = 0; i < temp; i++)
+	{
 		pow *= n;
 	}
-	
-	if (k >= 0) {
+
+	if (k >= 0)
+	{
 		return pow;
-	} else {
+	}
+	else
+	{
 		return 1.0 / pow;
 	}
-	
 }

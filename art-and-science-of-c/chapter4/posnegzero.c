@@ -9,20 +9,25 @@ else 0
 
 #include <stdio.h>
 
-int main() {
-	
+int main()
+{
 	int val;
-	
+
 	printf("enter value: ");
 	scanf("%d", &val);
-	
-	if (val > 0) {
+
+	if (val > 0)
+	{
 		printf("%d is +ve\n", val);
-	} else if(val == 0) {
+	}
+	else if (val == 0)
+	{
 		printf("%d is zero(0)\n", val);
-	} else {
+	}
+	else
+	{
 		printf("%d is -ve\n", val);
 	}
-	
+
 	return 0;
 }

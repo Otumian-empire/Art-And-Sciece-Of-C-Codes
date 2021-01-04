@@ -10,10 +10,10 @@ a program that computes and displays the range between a square root and it's pe
 int psquare(int num);
 int psqrrt(int num);
 
-int main() {
-	
+int main()
+{
 	int num = 0;
-	
+
 	/*
 	printf("Numbers perfect squares\n");
 	
@@ -31,24 +31,24 @@ int main() {
 		num++;
 	}
 	*/
-	
-	for (int i = 0; i < limit; i++) {
+
+	for (int i = 0; i < limit; i++)
+	{
 		printf("%d has an sqrt of %d\n", i, psqrrt(i));
 	}
-	
+
 	return 0;
 }
-
 
 /* 
 perfect square function, 
 returns the square of a number, n (n * n)
 */
-int psquare(int num) {
-	
+int psquare(int num)
+{
+
 	return num * num;
 }
-
 
 /*
 square root function, 
@@ -56,13 +56,15 @@ returns tue square root of a number, n
 n raised to the power half.
 this function on works for finding the root of perfect squares.
 */
-int psqrrt(int num) {
-	
+int psqrrt(int num)
+{
+
 	int div = 1;
-	
-	while (num / div != div) {
+
+	while (num / div != div)
+	{
 		div++;
 	}
-	
+
 	return div;
 }

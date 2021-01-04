@@ -13,28 +13,30 @@ limitations {
 
 int ndigit(int n);
 
-int main() {
-	
+int main()
+{
+
 	int n = 220310034;
-	
+
 	printf("there are %d digits in %d\n", ndigit(n), n);
-	
+
 	return 0;
 }
-
 
 /*
 a function that returns the number of
  digits in a given number
 */
-int ndigit(int n) {
-	
+int ndigit(int n)
+{
+
 	int counter = 0;
-	
-	while (n > 0) {
+
+	while (n > 0)
+	{
 		n /= 10;
 		counter++;
 	}
-	
+
 	return counter;
 }

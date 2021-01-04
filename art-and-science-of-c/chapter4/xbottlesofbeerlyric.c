@@ -15,14 +15,14 @@ modify this program by changing the numofbottles to an integer value
 
 #define numofbottles 99
 
-int main() {
-	
-	for (int i = numofbottles; i > 0; i--) {
-		
+int main()
+{
+	for (int i = numofbottles; i > 0; i--)
+	{
 		printf("%d bottles  of  beer  on  the wall.\n", i);
 		printf("%d bottles  of  beer.\n", i);
 		printf("You take  one  down, pass it  around.\n\n");
 	}
-	
+
 	return 0;
 }

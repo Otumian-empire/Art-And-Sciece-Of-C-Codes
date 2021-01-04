@@ -20,9 +20,12 @@ int main()
 {
     int x = 24, y = 18;
 
-    printf("the gcd_euclid_recursive of %d and %d is %d\n", x, y, gcd_euclid_recursive(x, y));
-    printf("the gcd_euclid_whileloop of %d and %d is %d\n", x, y, gcd_euclid_whileloop(x, y));
-    // printf("the gcd_euclid_forloop of %d and %d is %d\n", x, y, gcd_euclid_forloop(x, y));
+    printf("the gcd_euclid_recursive of %d and %d is %d\n",
+           x, y, gcd_euclid_recursive(x, y));
+    printf("the gcd_euclid_whileloop of %d and %d is %d\n",
+           x, y, gcd_euclid_whileloop(x, y));
+    // printf("the gcd_euclid_forloop of %d and %d is %d\n",
+    //        x, y, gcd_euclid_forloop(x, y));
 
     return 0;
 }

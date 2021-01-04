@@ -9,18 +9,18 @@ The conversion factors  you need are
 
 #include <stdio.h>
 
-int main() {
-	
+int main()
+{
 	float kilo, pounds, ounces;
-	
+
 	printf("enter weight in kilograms: ");
 	scanf("%f", &kilo);
-	
+
 	pounds = kilo * 2.2;
 	ounces = pounds * 16;
-	
-	printf("%5.2fkilograms = %5.2fpounds\n%5.2fpounds = %5.2founcee\n", kilo, pounds, pounds, ounces);
-	
-	
+
+	printf("%5.2fkilograms = %5.2fpounds\n%5.2fpounds = %5.2founcee\n",
+		   kilo, pounds, pounds, ounces);
+
 	return 0;
 }

@@ -11,14 +11,14 @@ you can modify this program by changing the startIndex and bendIndex
 #define startIndex 1
 #define endIndex 100
 
-int main() {
-	
+int main()
+{
 	/* n refers to the number of elements between startIndex and endIndex, inclusive */
 	int n = (endIndex - startIndex) + 1;
-	
+
 	int total = n * (n + 1) / 2;
-	
+
 	printf("the sum of numbers between %d and %d is %d", startIndex, endIndex, total);
-	
+
 	return 0;
 }
