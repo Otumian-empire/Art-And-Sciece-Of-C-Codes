@@ -3,3 +3,5 @@ app
 .vscode
 *.txt
 cs50.*
+base.c
+
