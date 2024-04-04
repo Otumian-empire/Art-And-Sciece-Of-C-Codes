@@ -40,7 +40,7 @@ int main()
     strcmp() - compare two strings */
 
     // string input
-    /* To retrieve a line of text or other string from the user, C 
+    /* To retrieve a line of text or other string from the user, C
     provides the scanf(), gets(), and fgets() functions. */
 
     // char fullname[10];
@@ -58,7 +58,7 @@ int main()
     /* A better version of gets is fgets */
     /*     fgets(fullname1, 12, stdin); */
 
-    /* This prevents buffer overflow, which happens when the string array isn't 
+    /* This prevents buffer overflow, which happens when the string array isn't
     big enough for the typed text. */
 
     /* printf("FullName: %s\n", fullname1); */
@@ -80,10 +80,10 @@ int main()
     /* fputs(password, stdout); */
     /* puts(password); */ /* Adds new line by default */
 
-    //String functions
+    // String functions
 
     /* The sprintf and sscanf Functions
-    sprintf is like a string builder - you take a couple of vars and create one 
+    sprintf is like a string builder - you take a couple of vars and create one
     sscanf is like a string splitter - you take a whole var and break it into a
      couple of others  */
 
@@ -164,8 +164,8 @@ int main()
 
     for (i = 0; i < 5; i++)
     {
-        printf("%d ", arr[i]); */
-    }
+        printf("%d ", arr[i]);
+    }*/
 
     return 0;
 }

@@ -4,4 +4,4 @@ app
 *.txt
 cs50.*
 base.c
-
+main
